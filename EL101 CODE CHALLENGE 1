@@ -1,0 +1,24 @@
+var Cars = function (cname, speed) {
+	this.cname = cname;
+	this.speed = speed;
+	this.accelerate = function() {
+	this.speed += 10;
+	};
+	this.break = function() {
+	this.speed -= 5;
+	};
+};
+var honda = new Cars('Honda', 120);
+var mercedes = new Cars('Mercedes', 95);
+
+console.log(honda);
+honda.accelerate();
+console.log(honda);
+honda.break();
+console.log(honda);
+
+console.log(mercedes);
+mercedes.accelerate();
+console.log(mercedes);
+mercedes.break();
+console.log(mercedes);
