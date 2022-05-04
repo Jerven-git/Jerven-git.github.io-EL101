@@ -1,0 +1,71 @@
+Given the code: comment our its types and functions.
+
+function Stopwatch() {  //Construction function
+
+  let startTime, endTime, running, duration = 0;  //block statement: Object
+
+
+
+  this.start = function() { //Object and function
+
+    if (running) //statement
+
+      throw new Error('Stopwatch has already started.');//statement and object
+
+    
+
+    running = true; //Value:boolean
+
+
+
+    startTime = new Date(); //Value:boolean
+
+  };
+
+
+
+  this.stop = function() { //Obeject and function
+
+    if (!running) //statement
+
+      throw new Error('Stopwatch is not started.'); //statement and object
+
+
+
+    running = false;//Value:boolean
+
+      
+
+    endTime = new Date();//Value boolean
+
+
+
+    const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+
+    duration += seconds; //Object and function
+
+  };
+
+
+
+  this.reset = function() {//Object, function and array
+
+    startTime = null;
+
+    endTime = null;
+
+    running = false; 
+
+    duration = 0; 
+
+  };
+
+
+
+  Object.defineProperty(this, 'duration', { //function and string
+
+    get: function() { return duration; }
+
+  });
+
+}
